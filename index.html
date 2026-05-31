@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <audio id="voiceAudio" src="voice.mp3"></audio>
     <div id="wrapper">
         <div class="flag__birthday">
             <img src="./images/1.png" alt="" width="350" class="flag__left">
@@ -246,9 +247,13 @@
     let boxmail = document.querySelector('.boxMail')
     var close = document.querySelector('.fa-xmark')
     mailBox.onclick = function () {
-        mailBox.classList.toggle('active')
-        boxmail.classList.add('active')
-    }
+    mailBox.classList.toggle('active')
+    boxmail.classList.add('active')
+
+    const voiceAudio = document.getElementById('voiceAudio');
+    voiceAudio.currentTime = 0;
+    voiceAudio.play();
+}
 
     close.addEventListener('click', function () {
         boxmail.classList.remove('active')
